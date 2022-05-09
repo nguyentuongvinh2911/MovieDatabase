@@ -1,0 +1,131 @@
+﻿@model Comp235MVCDemo.Models.Movie
+@*@Styles.Render("~/Content/myStyleSheet.css")*@
+@{
+    ViewBag.Title = "Movie";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Movie</h2>
+<div>
+    <table>
+        <tr>
+            <th>ID:</th>
+            <td>@Model.Id</td>
+        </tr>
+        <tr>
+            <th>Title:</th>
+            <td>@Model.Title</td>
+        </tr>
+        <tr>
+            <th>Director:</th>
+            <td>@Model.Director</td>
+        </tr>
+        <tr>
+            <th>Description:</th>
+            <td>@Model.Description</td>
+        </tr>
+        <tr>
+            <td>@Html.ActionLink("Edit", "MoviesEdit", new { id = Model.Id })</td>
+            <td>@Html.ActionLink("Delete", "MoviesDelete", new { id = Model.Id })</td>
+        </tr>
+    </table>   
+</div>
+
+@*@using (Html.BeginForm("Movie", "Home", FormMethod.Post))
+    {
+        if (!Model.IsEditable)
+        {
+            <div class="form-horizontal">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Id,
+                               htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => model.Id,
+                       new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Title,
+                                htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => model.Title,
+                            new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Director,
+                                htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => model.Director,
+                       new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Description,
+                                htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => model.Description,
+                       new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        @Html.ActionLink("Edit", "MoviesEdit", new { id = Model.Id })
+                        @Html.ActionLink("Delete", "MoviesDelete", new { id = Model.Id })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10" style="color:green">
+                        @ViewBag.Message
+
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="form-horizontal">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Id,
+                               htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => model.Id,
+                       new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Title,
+                                htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Title,
+                            new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Director,
+                                htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Director,
+                       new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Description,
+                                htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Description,
+                       new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" name="Save" class="btn btn-link" />
+                        <input type="submit" value="Cancel" name="Cancel" class="btn btn-link" />
+                    </div>
+                </div>
+            </div>
+        }
+
+
+    }*@
+
+
